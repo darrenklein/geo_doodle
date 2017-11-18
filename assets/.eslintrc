@@ -1,0 +1,47 @@
+{
+    parser: "babel-eslint",
+    "plugins": [
+        "react",
+        "babel"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "rules": {
+        "react/display-name": 0,
+        "react/forbid-component-props": 0,
+        "react/jsx-boolean-value": 1,
+        "react/jsx-closing-bracket-location": [1, "after-props"],
+        "react/jsx-closing-tag-location": 1,
+        "react/jsx-curly-brace-presence": 1,
+        "react/jsx-curly-spacing": 1,
+        "react/jsx-handler-names": 0,
+        "react/jsx-indent": [1, "tab"],
+        "react/jsx-indent-props": [1, "tab"],
+        "react/jsx-max-props-per-line": 0,
+        "react/jsx-no-bind": [1, {"ignoreRefs": true}],
+        "react/jsx-no-literals": 0,
+        "react/jsx-sort-props": 0,
+        "react/jsx-tag-spacing": 1,
+        "react/no-array-index-key": 1,
+        "react/no-set-state": 0,
+        "react/no-unused-state": 1,
+        "react/prefer-stateless-function": 1,
+        "react/prop-types": 1,
+        "react/require-default-props": 1,
+        "react/require-optimization": 1,
+        "react/self-closing-comp": 1,
+        "react/sort-comp": 1,
+        "react/sort-prop-types": 0,
+    },
+    "extends": "plugin:react/all",
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
+    }
+}

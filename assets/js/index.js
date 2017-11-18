@@ -4,4 +4,4 @@ import ReactDOM from "react-dom";
 import Index from "containers";
 
 
-ReactDOM.render(<Index />, document.getElementById("index"));
+ReactDOM.hydrate(<Index />, document.getElementById("index"));

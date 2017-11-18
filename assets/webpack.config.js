@@ -24,7 +24,7 @@ const resolve = {
   }
 }
 
-module.exports = [{
+const webpackConfig = [{
   // Client
   entry: [
     path.join(__dirname, "js/index.js"),
@@ -49,11 +49,14 @@ module.exports = [{
   },
   resolve: resolve,
   plugins: [
+    new Webpack.DefinePlugin({
+      "NODE_ENV": JSON.stringify(process.env.NODE_ENV || "development")
+    }),
     new ExtractTextPlugin({
       filename: "css/app.css",
       allChunks: true
     }),
-    new CopyPlugin([{from: path.join(__dirname, "static")}])
+    new CopyPlugin([{from: path.join(__dirname, "static")}]),
   ]
 }, {
   // Server
@@ -74,3 +77,25 @@ module.exports = [{
   resolve: resolve
 }];
 
+// WE ALSO WANT TO INCLUDE THE LINTING IF WE'RE IN DEVELOPMENT...
+if (webpackConfig[0].plugins[0].definitions.NODE_ENV === JSON.stringify("development")) {
+  const esLintLoaders = [
+    {
+      "enforce": "pre",
+      "exclude": /node_modules/,
+      "loader": "eslint-loader",
+      "query": { "presets": ["react", "es2015", "stage-2"] },
+      "test": /\.js$/
+    },
+    {
+      "enforce": "pre",
+      "exclude": /node_modules/,
+      "loader": "eslint-loader",
+      "test": /\.js$/
+    }
+  ]
+
+  webpackConfig[0].module.rules = [...webpackConfig[0].module.rules, ...esLintLoaders]
+}
+
+module.exports = webpackConfig
