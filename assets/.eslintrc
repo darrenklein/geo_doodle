@@ -38,8 +38,8 @@
         "react/sort-comp": 1,
         "react/sort-prop-types": 0,
     },
-    // eslint-config-circles IS OUR SHARED ESLINT CONFIG
-    "extends": "plugin:react/all",
+    // eslint-config-dklein IS SHARED ESLINT CONFIG - SEE devDependencies IN package.json
+    "extends": ["eslint-config-dklein", "plugin:react/all"],
     "env": {
         "es6": true,
         "browser": true,
