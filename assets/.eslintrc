@@ -38,6 +38,7 @@
         "react/sort-comp": 1,
         "react/sort-prop-types": 0,
     },
+    // eslint-config-circles IS OUR SHARED ESLINT CONFIG
     "extends": "plugin:react/all",
     "env": {
         "es6": true,

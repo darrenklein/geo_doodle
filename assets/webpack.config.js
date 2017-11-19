@@ -77,7 +77,7 @@ const webpackConfig = [{
   resolve: resolve
 }];
 
-// WE ALSO WANT TO INCLUDE THE LINTING IF WE'RE IN DEVELOPMENT...
+// INCLUDE LINTING FOR LOCAL DEVELOPMENT
 if (webpackConfig[0].plugins[0].definitions.NODE_ENV === JSON.stringify("development")) {
   const esLintLoaders = [
     {
