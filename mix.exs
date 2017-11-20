@@ -55,7 +55,9 @@ defmodule GeoDoodle.Mixfile do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "test": ["ecto.create --quiet", "ecto.migrate", "test"]
+      "test": ["ecto.create --quiet", "ecto.migrate", "test"],
+      # RUN ESLINT ON THE REACT FRONTEND - assets/
+      "lint": [~s|run -e 'System.cmd("npm", ["run", "lint"], [cd: "assets", into: IO.stream(:stdio, :line)])'|]
     ]
   end
 end

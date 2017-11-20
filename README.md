@@ -1,5 +1,15 @@
 # GeoDoodle
 
+## Linting
+This app's React frontend has been set up to lint with ESLint - a `mix` alias has been set up to run the linter from the top-level directory.
+
+    mix lint
+
+
+
+
+
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
